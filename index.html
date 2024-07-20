@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./public/styles.css" rel="stylesheet">
+  <title>Audio Verification App</title>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center mb-8">Audio Verification App</h1>
+    <div class="bg-white shadow-lg rounded-lg p-6">
+      <input type="file" id="audioFile" accept=".mp3, .wav" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+      <audio id="audioPlayer" controls class="w-full mt-4 hidden"></audio>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
