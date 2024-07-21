@@ -9,20 +9,9 @@
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
   <div class="container mx-auto p-4">
     <h1 class="text-4xl font-bold text-center mb-8">Audio Verification App</h1>
-    <div class="bg-white shadow-lg rounded-lg p-6 space-y-6">
-      <!-- File Upload Section -->
-      <div>
-        <label for="audioFile" class="block text-lg font-medium text-gray-700 mb-2">Upload Audio File</label>
-        <input type="file" id="audioFile" accept=".mp3, .wav" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
-      </div>
-      <!-- Audio Player -->
+    <div class="bg-white shadow-lg rounded-lg p-6">
+      <input type="file" id="audioFile" accept=".mp3, .wav" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
       <audio id="audioPlayer" controls class="w-full mt-4 hidden"></audio>
-      <!-- Analysis Result Section -->
-      <div id="analysisSection" class="hidden">
-        <h2 class="text-2xl font-semibold text-center mb-4">Analysis Result</h2>
-        <p id="analysisMessage" class="text-center text-gray-700 mb-4">Analyzing...</p>
-        <button id="fingerprintButton" class="block mx-auto bg-red-500 text-white py-2 px-4 rounded-full shadow-lg">Fingerprint Not Detected</button>
-      </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
