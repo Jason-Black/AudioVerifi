@@ -14,8 +14,11 @@ document.getElementById('audioFile').addEventListener('change', function(event) 
     // GSAP Animations for audio player appearance
     gsap.fromTo(audioPlayer, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
 
-    // Simulate analysis after audio is loaded
-    audioPlayer.addEventListener('loadeddata', () => {
+    // Clear any previous event listeners on the audio player to avoid multiple triggers
+    audioPlayer.removeEventListener('loadeddata', handleAudioLoaded);
+    audioPlayer.addEventListener('loadeddata', handleAudioLoaded);
+
+    function handleAudioLoaded() {
       gsap.fromTo(analysisSection, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
       analysisSection.classList.remove('hidden');
 
@@ -43,6 +46,6 @@ document.getElementById('audioFile').addEventListener('change', function(event) 
           fingerprintButton.classList.add('bg-red-500');
         }
       }, 3000); // Simulated analysis time
-    });
+    }
   }
 });
